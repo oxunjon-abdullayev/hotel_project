@@ -21,7 +21,7 @@ def account(request):
 def blog(request):
     blogs = Blog.objects.all()
     return render(request, 'app/blog.html',
-                  {"blogs":blogs})
+                  {"blogs": blogs})
 
 
 def blog_single(request):
@@ -36,16 +36,12 @@ def contact(request):
     return render(request, 'app/contact.html')
 
 
-def pricing(request):
-    return render(request, 'app/pricing.html')
-
-
 def room_details(request, room_id):
-    rooom = Room.objects.filter(id=room_id).first()
+    room = Room.objects.filter(id=room_id).first()
 
     return render(request=request,
                   template_name='app/room-details.html',
-                  context={"rooom": rooom})
+                  context={"room": room})
 
 
 def room_listing(request):

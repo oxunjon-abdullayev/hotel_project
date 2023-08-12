@@ -10,8 +10,8 @@ urlpatterns = [
     path('blog_single/', blog_single, name='blog_single'),
     path('booking/', booking, name='booking'),
     path('contact/', contact, name='contact'),
-    path('pricing/', pricing, name='pricing'),
-    path('room_details/', room_details, name='room_details'),
+
+    path('room_details/<int:room_id>/', room_details, name='room_details'),
     path('room_listing/', room_listing, name='room_listing'),
     path('service_details/', service_details, name='service_details'),
     path('service_single/', service_single, name='service_single'),

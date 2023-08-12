@@ -51,7 +51,7 @@
           <div class="col-lg-8">
             <div class="room__details">
               <div class="room__details-image">
-                <img src="{{ Room.image.url }}" alt="Room Image">
+                <img src="{{ room.image.url }}" alt="Room Image">
               </div>
               <div class="room__details-content">
                 <ul class="rating">
@@ -61,7 +61,7 @@
                   <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                   <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                 </ul>
-                <h3>{{ Room.title }}</h3>
+                <h3>{{ room.title }}</h3>
 
                 <ul class="room__feature">
                   <li class="room__feature-item">
@@ -96,7 +96,7 @@
                       <img src="{% static 'app/assets/images/room/icon/4.png' %}" alt="feature icon">
                     </div>
                     <div class="room__feature-text">
-                      <p>{{ Room.sqm }}</p>
+                      <p>{{ room.sqm }}</p>
                     </div>
                   </li>
 
@@ -121,7 +121,7 @@
 
                 <div class="room__details-text">
                   <h4>Description</h4>
-                  <p>{{ Room.description }}</p>
+                  <p>{{ room.description }}</p>
                 </div>
                 <div class="room__amenities mt-5">
                   <div class="room__amenities-image">

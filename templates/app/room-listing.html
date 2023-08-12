@@ -126,11 +126,11 @@
             <div class="room__wrapper">
                 <div class="row g-4">
                     <div class="col-xl-4 col-md-6">
-                        {% for Room in Rooms %}
+                        {% for room in Rooms %}
                             <div class="room__item room__item--style1">
                                 <div class="room__item-inner">
                                     <div class="room__item-thumb">
-                                        <img src="{{ Room.image.url }}" alt="room image">
+                                        <img src="{{ room.image.url }}" alt="room image">
                                     </div>
                                     <div class="room__item-content">
                                         <div class="room__item-header">
@@ -142,17 +142,17 @@
                                                     <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                                                     <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                                                 </ul>
-                                                <h3><a href="{% url "room_details" %}">{{ Room.title }}</a></h3>
+                                                <h3><a href="{% url "room_details" room.id %}">{{ room.title }}</a></h3>
                                                 <p>Available room</p>
                                             </div>
 
                                             <div class="room__item-price">
-                                                <h3>${{ Room.sqm }}</h3>
+                                                <h3>${{ room.sqm }}</h3>
                                                 <p>Per Night</p>
                                             </div>
                                         </div>
                                         <div class="room__item-body">
-                                            <p>{{ Room.description }}</p>
+                                            <p>{{ room.description }}</p>
                                             <ul class="room__feature">
                                                 <li class="room__feature-item">
                                                     <div class="room__feature-icon">
@@ -160,7 +160,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.person }}</p>
+                                                        <p>{{ room.person }}</p>
                                                     </div>
                                                 </li>
 
@@ -170,7 +170,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.bed_choice }}</p>
+                                                        <p>{{ room.bed_choice }}</p>
                                                     </div>
                                                 </li>
 
@@ -180,7 +180,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.wifi }}</p>
+                                                        <p>{{ room.wifi }}</p>
                                                     </div>
                                                 </li>
 
@@ -190,7 +190,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.sqm }}</p>
+                                                        <p>{{ room.sqm }}</p>
                                                     </div>
                                                 </li>
 
@@ -200,7 +200,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.balcony }}</p>
+                                                        <p>{{ room.balcony }}</p>
                                                     </div>
                                                 </li>
 
@@ -210,7 +210,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.breakfast }}</p>
+                                                        <p>{{ room.breakfast }}</p>
                                                     </div>
                                                 </li>
                                             </ul>

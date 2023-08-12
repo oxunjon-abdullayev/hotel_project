@@ -249,7 +249,7 @@
       <div class="room__wrapper">
         <div class="row g-4">
           <div class="col-xl-4 col-md-6">
-            {% for Room in Rooms %}
+            {% for room in Rooms %}
                             <div class="room__item room__item--style1">
                                 <div class="room__item-inner">
                                     <div class="room__item-thumb">
@@ -265,17 +265,17 @@
                                                     <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                                                     <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                                                 </ul>
-                                                <h3><a href="{% url "room_details" %}">{{ Room.title }}</a></h3>
+                                                <h3><a href="{% url "room_details" room.id %}">{{ room.title }}</a></h3>
                                                 <p>Available room</p>
                                             </div>
 
                                             <div class="room__item-price">
-                                                <h3>${{ Room.price }}</h3>
+                                                <h3>${{ room.price }}</h3>
                                                 <p>Per Night</p>
                                             </div>
                                         </div>
                                         <div class="room__item-body">
-                                            <p>{{ Room.description }}</p>
+                                            <p>{{ room.description }}</p>
                                             <ul class="room__feature">
                                                 <li class="room__feature-item">
                                                     <div class="room__feature-icon">
@@ -283,7 +283,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.person }}</p>
+                                                        <p>{{ room.person }}</p>
                                                     </div>
                                                 </li>
 
@@ -293,7 +293,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.bed_choice }}</p>
+                                                        <p>{{ room.bed_choice }}</p>
                                                     </div>
                                                 </li>
 
@@ -303,7 +303,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.wifi }}</p>
+                                                        <p>{{ room.wifi }}</p>
                                                     </div>
                                                 </li>
 
@@ -313,7 +313,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.sqm }}</p>
+                                                        <p>{{ room.sqm }}</p>
                                                     </div>
                                                 </li>
 
@@ -323,7 +323,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.balcony }}</p>
+                                                        <p>{{ room.balcony }}</p>
                                                     </div>
                                                 </li>
 
@@ -333,7 +333,7 @@
                                                              alt="feature icon">
                                                     </div>
                                                     <div class="room__feature-text">
-                                                        <p>{{ Room.breakfast }}</p>
+                                                        <p>{{ room.breakfast }}</p>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -548,6 +548,7 @@
 
 
   <!-- ========== Popular Room Section start Here========== -->
+    {% for room in Rooms %}
   <section class="room room--popular padding-top padding-bottom">
     <div class="container">
       <div class="section-header" data-aos="fade-up" data-aos-duration="1000">
@@ -576,7 +577,7 @@
                         <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                         <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                       </ul>
-                      <h3><a href="{% url 'room_details' %}">Family Room</a></h3>
+                      <h3><a href="{% url 'room_details' room.id %}">Family Room</a></h3>
                       <a href="#" class="custom-btn custom-btn--bordered"><span>Booking Now</span></a>
                     </div>
 
@@ -606,7 +607,7 @@
                         <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                         <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                       </ul>
-                      <h3><a href="{% url 'room_details' %}">Delux Room</a></h3>
+                      <h3><a href="{% url 'room_details' room.id %}">Delux Room</a></h3>
                       <a href="#" class="custom-btn custom-btn--bordered"><span>Booking Now</span></a>
                     </div>
 
@@ -636,7 +637,7 @@
                         <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                         <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                       </ul>
-                      <h3><a href="{% url 'room_details' %}">Single Room</a></h3>
+                      <h3><a href="{% url 'room_details' room.id %}">Single Room</a></h3>
                       <a href="#" class="custom-btn custom-btn--bordered"><span>Booking Now</span></a>
                     </div>
 
@@ -666,7 +667,7 @@
                         <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                         <li class="rating__star"><i class="fa-solid fa-star"></i></li>
                       </ul>
-                      <h3><a href="{% url 'room_details' %}">Couple Room</a></h3>
+                      <h3><a href="{% url 'room_details' room.id %}">Couple Room</a></h3>
                       <a href="#" class="custom-btn custom-btn--bordered"><span>Booking Now</span></a>
                     </div>
 
@@ -685,7 +686,7 @@
     </div>
   </section>
   <!-- ========== Popular Room Section ends Here========== -->
-
+    {% endfor %}
 
 
 
