@@ -1,0 +1,266 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/room-listing1.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:33:40 GMT -->
+
+
+<body>
+{% block content %}
+    <!-- ===============>> Preloader start here <<================= -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- ===============>> Preloader end here <<================= -->
+
+
+
+    <!-- ========== Header Section Starts Here========== -->
+    {% include 'base/header.html' %}
+    <!-- ========== Header Section Ends Here========== -->
+
+
+
+
+    <!-- ================> Page header start here <================== -->
+    <section class="page-header bg--cover"
+             style="background-image: url({% static 'app/assets/images/header/bg.jpg' %});">
+        <div class="container">
+            <div class="page-header__content text-center">
+                <h2>Room lisiting 1</h2>
+                <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Room listing 1</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <!-- ================> Page header end here <================== -->
+
+
+
+
+
+
+    <!-- ========== Booking Form Section start Here========== -->
+    <div class="booking booking--uplifted-sm">
+        <div class="container">
+            <div class="booking__wrapper p-3 booking__wrapper--has-shadow">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="#" class="booking__form">
+                            <div class="row justify-content-center g-4">
+                                <div class="col-xxl-2 col-xl-3 col-sm-6">
+                                    <div class="booking__form-inputgroup">
+                                        <div class="booking__form-date">
+                                            <input type="text" class="date-input form-control" placeholder="Check In">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-2 col-xl-3 col-sm-6">
+                                    <div class="booking__form-inputgroup">
+                                        <div class="booking__form-date">
+                                            <input type="text" class="date-input form-control" placeholder="Check Out">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-2 col-xl-3 col-sm-6">
+                                    <div class="booking__form-inputgroup">
+                                        <!-- <label for="test1" class="form-label">Room</label> -->
+                                        <select class="nice-selct wide form-select" aria-label="Default select example"
+                                                id="booking-field-3">
+                                            <option selected>Adult</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-2 col-xl-3 col-sm-6">
+                                    <div class="booking__form-inputgroup">
+                                        <!-- <label for="test1" class="form-label">Check Out</label> -->
+                                        <select class="nice-selct wide form-select" aria-label="Default select example"
+                                                id="booking-field-4">
+                                            <option selected>Children</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-2 col-xl-3 col-sm-6">
+                                    <div class="booking__form-inputgroup">
+                                        <!-- <label for="test1" class="form-label">Children</label> -->
+                                        <select class="nice-selct wide form-select" aria-label="Default select example"
+                                                id="booking-field-5">
+                                            <option selected>Room</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-2 col-xl-3 col-sm-6">
+                                    <div class="booking__form-btn">
+                                        <button class="custom-btn custom-btn--fluid"><span>Book Now</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== Booking Form Section Ends Here========== -->
+
+
+
+
+
+    <!-- ========== Room Section start Here========== -->
+    <section class="room padding-top padding-bottom">
+        <div class="container">
+            <div class="room__wrapper">
+                <div class="row g-4">
+                    <div class="col-xl-4 col-md-6">
+                        {% for Room in Rooms %}
+                            <div class="room__item room__item--style1">
+                                <div class="room__item-inner">
+                                    <div class="room__item-thumb">
+                                        <img src="{{ Room.image.url }}" alt="room image">
+                                    </div>
+                                    <div class="room__item-content">
+                                        <div class="room__item-header">
+                                            <div class="room__item-name">
+                                                <ul class="rating">
+                                                    <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                                                    <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                                                    <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                                                    <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                                                    <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                                                </ul>
+                                                <h3><a href="{% url "room_details" %}">{{ Room.title }}</a></h3>
+                                                <p>Available room</p>
+                                            </div>
+
+                                            <div class="room__item-price">
+                                                <h3>${{ Room.sqm }}</h3>
+                                                <p>Per Night</p>
+                                            </div>
+                                        </div>
+                                        <div class="room__item-body">
+                                            <p>{{ Room.description }}</p>
+                                            <ul class="room__feature">
+                                                <li class="room__feature-item">
+                                                    <div class="room__feature-icon">
+                                                        <img src="{% static 'app/assets/images/room/icon/1.png' %}"
+                                                             alt="feature icon">
+                                                    </div>
+                                                    <div class="room__feature-text">
+                                                        <p>{{ Room.person }}</p>
+                                                    </div>
+                                                </li>
+
+                                                <li class="room__feature-item">
+                                                    <div class="room__feature-icon">
+                                                        <img src="{% static 'app/assets/images/room/icon/2.png' %}"
+                                                             alt="feature icon">
+                                                    </div>
+                                                    <div class="room__feature-text">
+                                                        <p>{{ Room.bed_choice }}</p>
+                                                    </div>
+                                                </li>
+
+                                                <li class="room__feature-item">
+                                                    <div class="room__feature-icon">
+                                                        <img src="{% static 'app/assets/images/room/icon/3.png' %}"
+                                                             alt="feature icon">
+                                                    </div>
+                                                    <div class="room__feature-text">
+                                                        <p>{{ Room.wifi }}</p>
+                                                    </div>
+                                                </li>
+
+                                                <li class="room__feature-item">
+                                                    <div class="room__feature-icon">
+                                                        <img src="{% static 'app/assets/images/room/icon/4.png' %}"
+                                                             alt="feature icon">
+                                                    </div>
+                                                    <div class="room__feature-text">
+                                                        <p>{{ Room.sqm }}</p>
+                                                    </div>
+                                                </li>
+
+                                                <li class="room__feature-item">
+                                                    <div class="room__feature-icon">
+                                                        <img src="{% static 'app/assets/images/room/icon/5.png' %}"
+                                                             alt="feature icon">
+                                                    </div>
+                                                    <div class="room__feature-text">
+                                                        <p>{{ Room.balcony }}</p>
+                                                    </div>
+                                                </li>
+
+                                                <li class="room__feature-item">
+                                                    <div class="room__feature-icon">
+                                                        <img src="{% static 'app/assets/images/room/icon/6.png' %}"
+                                                             alt="feature icon">
+                                                    </div>
+                                                    <div class="room__feature-text">
+                                                        <p>{{ Room.breakfast }}</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <a href="#" class="custom-btn"><span>Booking Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="mt-5 text-center">
+                    <nav aria-label="Room listing Pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <span class="page-link"><i class="fa-solid fa-angle-left"></i></span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">2</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== Room Section ends Here========== -->
+
+
+
+
+
+    <!-- ========== Footer Section start Here========== -->
+    {% include 'base/footer.html' %}
+    <!-- ========== Footer Section ends Here========== -->
+
+
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop"><i class="fa-solid fa-arrow-up"></i></a>
+    <!-- scrollToTop ending here -->
+
+    <!-- vendor plugins -->
+{% endblock content %}
+</body>
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/room-listing1.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:33:40 GMT -->
+</html>

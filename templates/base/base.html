@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} {% endblock title %}</title>
+
+        <link rel="shortcut icon" href="{% static 'app/assets/images/favicon.png' %}" type="image/x-icon">
+
+        <link rel="stylesheet" href="{% static 'app/assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/aos.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/lightcase.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/swiper-bundle.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/flatpickr.min.css' %}">
+
+        <!-- main css for template -->
+        <link rel="stylesheet" href="{% static 'app/assets/css/style.css' %}">
+    </head>
+</head>
+<body>
+{% block content %}
+{% endblock content %}
+  <script src="{% static 'app/assets/js/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/flatpickr.js' %}"></script>
+  <script src="{% static 'app/assets/js/all.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/aos.js' %}"></script>
+  <script src="{% static 'app/assets/js/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/countdown.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/lightcase.js' %}"></script>
+  <script src="{% static 'app/assets/js/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'app/assets/js/kursor.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/progressbar.min.js' %}"></script>
+  <script src="{% static 'app/assets/js/custom.js' %}"></script>
+</body>
+</html>

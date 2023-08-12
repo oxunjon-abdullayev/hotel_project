@@ -1,0 +1,331 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/room-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:33:44 GMT -->
+
+
+<body>
+{% block content %}
+  <!-- ===============>> Preloader start here <<================= -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+  <!-- ===============>> Preloader end here <<================= -->
+
+
+
+  <!-- ========== Header Section Starts Here========== -->
+  {% include 'base/header.html' %}
+  <!-- ========== Header Section Ends Here========== -->
+
+
+
+
+  <!-- ================> Page header start here <================== -->
+  <section class="page-header bg--cover" style="background-image: url({% static 'app/assets/images/header' %}/bg.jpg);">
+    <div class="container">
+      <div class="page-header__content text-center">
+        <h2>Room Details</h2>
+        <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Room Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <!-- ================> Page header end here <================== -->
+
+
+
+
+
+
+  <!-- ========== Room Details Section start Here========== -->
+  <section class="room padding-top padding-bottom">
+    <div class="container">
+      <div class="room__wrapper">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            <div class="room__details">
+              <div class="room__details-image">
+                <img src="{{ Room.image.url }}" alt="Room Image">
+              </div>
+              <div class="room__details-content">
+                <ul class="rating">
+                  <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                  <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                  <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                  <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                  <li class="rating__star"><i class="fa-solid fa-star"></i></li>
+                </ul>
+                <h3>{{ Room.title }}</h3>
+
+                <ul class="room__feature">
+                  <li class="room__feature-item">
+                    <div class="room__feature-icon">
+                      <img src="{% static 'app/assets/images/room/icon/1.png' %}" alt="feature icon">
+                    </div>
+                    <div class="room__feature-text">
+                      <p>4 Person</p>
+                    </div>
+                  </li>
+
+                  <li class="room__feature-item">
+                    <div class="room__feature-icon">
+                      <img src="{% static 'app/assets/images/room/icon/2.png' %}" alt="feature icon">
+                    </div>
+                    <div class="room__feature-text">
+                      <p>King bed</p>
+                    </div>
+                  </li>
+
+                  <li class="room__feature-item">
+                    <div class="room__feature-icon">
+                      <img src="{% static 'app/assets/images/room/icon/3.png' %}" alt="feature icon">
+                    </div>
+                    <div class="room__feature-text">
+                      <p>free wifi</p>
+                    </div>
+                  </li>
+
+                  <li class="room__feature-item">
+                    <div class="room__feature-icon">
+                      <img src="{% static 'app/assets/images/room/icon/4.png' %}" alt="feature icon">
+                    </div>
+                    <div class="room__feature-text">
+                      <p>{{ Room.sqm }}</p>
+                    </div>
+                  </li>
+
+                  <li class="room__feature-item">
+                    <div class="room__feature-icon">
+                      <img src="{% static 'app/assets/images/room/icon/5.png' %}" alt="feature icon">
+                    </div>
+                    <div class="room__feature-text">
+                      <p>Shower</p>
+                    </div>
+                  </li>
+
+                  <li class="room__feature-item">
+                    <div class="room__feature-icon">
+                      <img src="{% static 'app/assets/images/room/icon/6.png' %}" alt="feature icon">
+                    </div>
+                    <div class="room__feature-text">
+                      <p>Breakfast</p>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="room__details-text">
+                  <h4>Description</h4>
+                  <p>{{ Room.description }}</p>
+                </div>
+                <div class="room__amenities mt-5">
+                  <div class="room__amenities-image">
+                    <img src="{% static 'app/assets/images/room/details/2.png' %}" alt="Room Image">
+                  </div>
+                  <div class="room__amenities-content">
+                    <h4>Amenities</h4>
+                    <ul class="room__amenities-list">
+                      <li class="room__amenities-item"><span><i class="fa-regular fa-circle-check"></i></span> Air
+                        Condition Facilities</li>
+                      <li class="room__amenities-item"><span><i class="fa-regular fa-circle-check"></i></span>
+                        Refrigerator and water
+                      </li>
+                      <li class="room__amenities-item"><span><i class="fa-regular fa-circle-check"></i></span> Room Side
+                        Balcony
+                      </li>
+                      <li class="room__amenities-item"><span><i class="fa-regular fa-circle-check"></i></span> Fruits
+                        are available
+                      </li>
+                      <li class="room__amenities-item"><span><i class="fa-regular fa-circle-check"></i></span> 2
+                        Elevator Available
+                      </li>
+                      <li class="room__amenities-item"><span><i class="fa-regular fa-circle-check"></i></span> Tables
+                        and Chairs</li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <!-- =========<< room video >>========= -->
+            <div class="room__video padding-top">
+              <div class="room__video-wrapper">
+                <img src="{% static 'app/assets/images/room/details/video.png' %}" alt="Video Preview Image">
+                <a href="https://www.youtube.com/embed/4K6Sh1tsAW4" data-rel="lightcase" class="room__video-btn"><i
+                    class="fa-solid fa-play"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-8">
+            <aside>
+              <div class="widget widget-booking">
+                <div class="booking__wrapper booking__wrapper--has-shadow bg-section-color">
+                  <div class="row">
+                    <div class="col-12">
+                      <form action="#" class="booking__form">
+                        <div class="row justify-content-center g-4">
+                          <div class="col-12">
+                            <div class="booking__form-inputgroup">
+                              <div class="booking__form-input">
+                                <input type="text" class="form-control" placeholder="Full Name">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="booking__form-inputgroup">
+                              <div class="booking__form-input">
+                                <input type="text" class="form-control" placeholder="Email Address">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="booking__form-inputgroup">
+                              <div class="booking__form-date">
+                                <input type="text" class="date-input form-control" placeholder="Check In">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="booking__form-inputgroup">
+                              <div class="booking__form-date">
+                                <input type="text" class="date-input form-control" placeholder="Check Out">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="booking__form-inputgroup">
+                              <!-- <label for="test1" class="form-label">Room</label> -->
+                              <select class="nice-selct wide form-select" aria-label="Default select example"
+                                id="booking-field-3">
+                                <option selected>Adult</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="booking__form-inputgroup">
+                              <!-- <label for="test1" class="form-label">Check Out</label> -->
+                              <select class="nice-selct wide form-select" aria-label="Default select example"
+                                id="booking-field-4">
+                                <option selected>Children</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="booking__form-inputgroup">
+                              <!-- <label for="test1" class="form-label">Children</label> -->
+                              <select class="nice-selct wide form-select" aria-label="Default select example"
+                                id="booking-field-5">
+                                <option selected>Room</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="booking__form-btn">
+                              <button class="custom-btn custom-btn--fluid"><span>Book Now</span></button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="widget widget-offer">
+                <div class="widget__header">
+                  <h4>Summer Offer</h4>
+                </div>
+                <ul class="lab-ul widget-wrapper">
+                  <li class="widget-post-item">
+                    <div class="post-thumb">
+                      <a href="blog-single.html"><img src="{% static 'app/assets/images/blog/p-post/01.jpg' %}" alt="product"></a>
+                    </div>
+                    <div class="post-content">
+                      <a href="blog-single.html">
+                        <h6>Travellers History in the
+                          France</h6>
+                      </a>
+                      <p>From $80.00 / Per Night</p>
+                    </div>
+                  </li>
+                  <li class="widget-post-item">
+                    <div class="post-thumb">
+                      <a href="blog-single.html"><img src="{% static 'app/assets/images/blog/p-post/02.jpg' %}" alt="product"></a>
+                    </div>
+                    <div class="post-content">
+                      <a href="blog-single.html">
+                        <h6>Boosting Energy with travelling in Asia </h6>
+                      </a>
+                      <p>From $80.00 / Per Night</p>
+                    </div>
+                  </li>
+                  <li class="widget-post-item">
+                    <div class="post-thumb">
+                      <a href="blog-single.html"><img src="{% static 'app/assets/images/blog/p-post/03.jpg' %}" alt="product"></a>
+                    </div>
+                    <div class="post-content">
+                      <a href="blog-single.html">
+                        <h6>Two Travellers History in the
+                          Paris</h6>
+                      </a>
+                      <p>From $80.00 / Per Night</p>
+                    </div>
+                  </li>
+                  <li class="widget-post-item">
+                    <div class="post-thumb">
+                      <a href="blog-single.html"><img src="{% static 'app/assets/images/blog/p-post/04.jpg' %}" alt="product"></a>
+                    </div>
+                    <div class="post-content">
+                      <a href="blog-single.html">
+                        <h6>Couple tour in Thiland two night three days</h6>
+                      </a>
+                      <p>From $80.00 / Per Night</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== Room Details Section ends Here========== -->
+
+
+
+
+
+  <!-- ========== Footer Section start Here========== -->
+  {% include 'base/footer.html' %}
+  <!-- ========== Footer Section ends Here========== -->
+
+
+  <!-- scrollToTop start here -->
+  <a href="#" class="scrollToTop"><i class="fa-solid fa-arrow-up"></i></a>
+  <!-- scrollToTop ending here -->
+
+  <!-- vendor plugins -->
+{% endblock content %}
+</body>
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/room-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:33:51 GMT -->
+</html>

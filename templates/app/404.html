@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:34:25 GMT -->
+{% block content %}
+    {% include 'base/header.html' %}
+<body>
+
+    <!-- ===============>> Preloader start here <<================= -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- ===============>> Preloader end here <<================= -->
+
+
+
+    <!-- ================> 404 section start here <================== -->
+    <section class="error" style="background-image: url({% static 'app/assets/images/404/bg.jpg' %});">
+        <div class="error__inner">
+            <div class="error__content">
+                <h1>404</h1>
+                <h2 class="color--gradient-y mb-3">Opps! We Can't Find the page</h2>
+                <div class="text-center mt-5">
+                    <a href="{% url 'index' %}" class="custom-btn"><span>Back To Home</span> </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- ================> 404 section end here <================== -->
+
+
+
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop"><i class="fa-solid fa-arrow-up"></i></a>
+    <!-- scrollToTop ending here -->
+    {% include 'base/footer.html' %}
+    <!-- vendor plugins -->
+
+    </body>
+    <!-- Mirrored from labartisan.net/demo/tavern/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:34:26 GMT -->
+    </html>
+{% endblock content %}

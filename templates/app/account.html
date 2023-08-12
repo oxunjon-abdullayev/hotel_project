@@ -1,0 +1,183 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/account.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:34:25 GMT -->
+
+<body>
+{% block content %}
+  <!-- ===============>> Preloader start here <<================= -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+  <!-- ===============>> Preloader end here <<================= -->
+
+
+
+  <!-- ========== Header Section Starts Here========== -->
+{% include 'base/header.html' %}
+  <!-- ========== Header Section Ends Here========== -->
+
+
+
+
+  <!-- ================> Page header start here <================== -->
+  <section class="page-header bg--cover" style="background-image: url({% static 'app/assets/images/header/bg.jpg' %});">
+    <div class="container">
+      <div class="page-header__content text-center">
+        <h2>Account Page</h2>
+        <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">account page</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <!-- ================> Page header end here <================== -->
+
+
+
+
+
+
+  <!-- ========== Account Section start Here========== -->
+  <div class="account padding-top padding-bottom">
+    <div class="container">
+
+      <div class="account__wrapper">
+        <div class="row justify-content-center">
+          <div class="col-xl-4 col-lg-5 col-md-7">
+            <div class="account__tab">
+              <ul class="account__tab-nav nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup-tab-pane"
+                    type="button" role="tab" aria-controls="signup-tab-pane" aria-selected="true">Sign Up</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="signin-tab" data-bs-toggle="tab" data-bs-target="#signin-tab-pane"
+                    type="button" role="tab" aria-controls="signin-tab-pane" aria-selected="false">Sign In</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="signup-tab-pane" role="tabpanel" aria-labelledby="signup-tab"
+                  tabindex="0">
+                  <a href="#" class="fb-btn d-block"><span><i class="fa-brands fa-facebook-f"></i></span> Signup
+                    with
+                    <strong>Facebook</strong></a>
+
+                  <div class="account__or"><span>Or</span></div>
+                  <form action="#" class="account__form">
+                    <!-- Sign up form content -->
+                    <div class="row justify-content-center g-4 mb-3">
+                      <div class="col-12">
+                        <div class="account__form-inputgroup">
+                          <div class="account__form-input">
+                            <input type="text" class="form-control" placeholder="Full Name">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="account__form-inputgroup">
+                          <div class="account__form-input">
+                            <input type="text" class="form-control" placeholder="Email Address">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="account__form-inputgroup">
+                          <div class="account__form-input">
+                            <input type="text" class="form-control" placeholder="Mobile Number">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="account__form-inputgroup">
+                          <div class="account__form-input">
+                            <input type="password" class="form-control" placeholder="Password">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p>By creating an account you will be up to date on an order's</p>
+                    <div class="account__form-btn mt-4">
+                      <button class="custom-btn custom-btn--fluid"><span>Sign Up</span></button>
+                    </div>
+                    <p class="account__switcher">Already have an account? <a href="#signin-tab-pane"
+                        data-bs-toggle="tab">Sign In</a></p>
+                  </form>
+                </div>
+                <div class="tab-pane fade" id="signin-tab-pane" role="tabpanel" aria-labelledby="signin-tab"
+                  tabindex="0">
+                  <a href="#" class="fb-btn d-block"><span><i class="fa-brands fa-facebook-f"></i></span> Signin
+                    with
+                    <strong>Facebook</strong></a>
+
+                  <div class="account__or"><span>Or</span></div>
+                  <form action="#" class="account__form">
+                    <!-- Sign up form content -->
+                    <div class="row justify-content-center g-4 mb-3">
+                      <div class="col-12">
+                        <div class="account__form-inputgroup">
+                          <div class="account__form-input">
+                            <input type="text" class="form-control" placeholder="Email Address">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="account__form-inputgroup">
+                          <div class="account__form-input">
+                            <input type="password" class="form-control" placeholder="Password">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="account__meta">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                          Remember me
+                        </label>
+                      </div>
+                      <a href="#" class="forgot-pass">Forgot Password?</a>
+                    </div>
+                    <div class="account__form-btn mt-4">
+                      <button class="custom-btn custom-btn--fluid"><span>Sign In</span></button>
+                    </div>
+                    <p class="account__switcher">Don't have an account? <a href="#signup-tab-pane"
+                        data-bs-toggle="tab">Sign Up</a></p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Account Section Ends Here========== -->
+
+
+
+
+
+
+{% include 'base/footer.html' %}
+  <!-- ========== Footer Section ends Here========== -->
+
+
+  <!-- scrollToTop start here -->
+  <a href="#" class="scrollToTop"><i class="fa-solid fa-arrow-up"></i></a>
+  <!-- scrollToTop ending here -->
+
+  <!-- vendor plugins -->
+{% endblock content %}
+</body>
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/account.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:34:25 GMT -->
+</html>

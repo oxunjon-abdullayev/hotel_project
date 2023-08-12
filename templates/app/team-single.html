@@ -1,0 +1,186 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Mirrored from labartisan.net/demo/tavern/team-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:34:21 GMT -->
+
+
+<body>
+{% block content %}
+  <!-- ===============>> Preloader start here <<================= -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+  <!-- ===============>> Preloader end here <<================= -->
+
+
+
+  <!-- ========== Header Section Starts Here========== -->
+  {% include 'base/header.html' %}
+  <!-- ========== Header Section Ends Here========== -->
+
+
+
+
+  <!-- ================> Page header start here <================== -->
+  <section class="page-header bg--cover" style="background-image: url({% static 'app/assets/images/header/bg.jpg' %});">
+    <div class="container">
+      <div class="page-header__content text-center">
+        <h2>Hotel Staff Single</h2>
+        <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.html">Pages</a></li>
+            <li class="breadcrumb-item active" aria-current="page">staff single</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <!-- ================> Page header end here <================== -->
+
+
+
+
+
+
+  <!-- ========== Team single Section start Here========== -->
+  <section class="team-single padding-top padding-bottom">
+    <div class="container">
+      <div class="team-single__wrapper">
+        <div class="team-single__staff">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+              <div class="team-single__staff-image">
+                <img src="{% static 'app/assets/images/team/single/1.png' %}" alt="staff Image">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="team-single__staff-content">
+                <div class="team-single__staff-name">
+                  <h3>Amanda q. brown</h3>
+                  <p>Hotel Chef</p>
+                </div>
+                <ul class="team-single__staff-info">
+                  <li class="team-single__staff-infoitem">
+                    <p class="team-single__staff-infoname">Company</p>
+                    <p class="pteam-single__staff-infovalue">Tavern Hotel and Resort</p>
+                  </li>
+
+                  <li class="team-single__staff-infoitem">
+                    <p class="team-single__staff-infoname">Experience</p>
+                    <p class="pteam-single__staff-infovalue">05 Years + </p>
+                  </li>
+                  <li class="team-single__staff-infoitem">
+                    <p class="team-single__staff-infoname">Email</p>
+                    <p class="pteam-single__staff-infovalue">amanda@tavern.com</p>
+                  </li>
+                  <li class="team-single__staff-infoitem">
+                    <p class="team-single__staff-infoname">Phone</p>
+                    <p class="pteam-single__staff-infovalue">+880123654789</p>
+                  </li>
+
+                  <li class="team-single__staff-infoitem">
+
+
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <h4>Personal Experience</h4>
+        <p>Since joining Integrin in 2009, Chris More has helped turn the company from a group of bright technology
+          minds working
+          with startups into a globe company from a group technology
+          In Chris's time as President and CEO of company the company has from group experienced explosive bright
+          technology minds
+          growth in size and revenue while developing culture
+          that fosters engaged group experienced employees around innovation.
+        </p>
+        <p>Chris is a frequent speaker on the topics of global innovation and digital disruption. He is also an avid
+          cook
+          and
+          history buff you can find him dining technology minds working with than
+          late at night with the chefs of the hotels where he stays during his travels, or reading in his home library.
+        </p>
+
+        <div class="row g-5 my-4">
+          <div class="col-lg-6">
+            <h4>Early Years</h4>
+            <p>Since joining Integrin info 2002 in Chris more has helped turn company group experienced explosive from a
+              group of
+              bright technology mind working on the with startups into global
+              experience explosive growth in size and revenue all while developing are
+            </p>
+            <p>Since joining Integrin info 2002 in Chris more has helped turn company group experienced explosive from a
+              group of
+              bright technology mind working on the with startups into global
+              experience explosive growth in size and revenue all while developing are
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <h4>Language Skills</h4>
+            <ul id="skills" class="skills mt-4">
+              <li class="skills__item">
+                <p>English</p>
+                <div class="skills__item-wrapper">
+                  <span class="skills__item-bar" data-bar='{ "color": "#E8A41D" }'>
+                    <span class="skills__item-data">90%</span>
+                  </span>
+                </div>
+              </li>
+              <li class="skills__item">
+                <p>Spanish</p>
+                <div class="skills__item-wrapper">
+                  <span class="skills__item-bar" data-bar='{ "color": "#E8A41D" }'>
+                    <span class="skills__item-data">70%</span>
+                  </span>
+                </div>
+              </li>
+              <li class="skills__item">
+                <p>Italian</p>
+                <div class="skills__item-wrapper">
+                  <span class="skills__item-bar" data-bar='{ "color": "#E8A41D" }'>
+                    <span class="skills__item-data">60%</span>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </section>
+  <!-- ========== Team single Section end Here========== -->
+
+
+
+
+
+
+
+  <!-- ========== Footer Section start Here========== -->
+  {% include 'base/footer.html' %}
+  <!-- ========== Footer Section ends Here========== -->
+
+
+  <!-- scrollToTop start here -->
+  <a href="#" class="scrollToTop"><i class="fa-solid fa-arrow-up"></i></a>
+  <!-- scrollToTop ending here -->
+
+  <!-- vendor plugins -->
+{% endblock content %}
+
+</body>
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/team-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:34:22 GMT -->
+</html>

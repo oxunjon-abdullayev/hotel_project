@@ -1,0 +1,249 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Mirrored from labartisan.net/demo/tavern/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:34:26 GMT -->
+{% include 'base/header.html' %}
+
+<body>
+{% block content %}
+  <!-- ===============>> Preloader start here <<================= -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+  <!-- ===============>> Preloader end here <<================= -->
+
+
+
+  <!-- ========== Header Section Starts Here========== -->
+{% include 'base/header.html' %}
+  <!-- ========== Header Section Ends Here========== -->
+
+
+
+
+  <!-- ================> Page header start here <================== -->
+  <section class="page-header bg--cover" style="background-image: url({% static 'app/assets/images/header/bg.jpg' %});">
+    <div class="container">
+      <div class="page-header__content text-center">
+        <h2>Blog page</h2>
+        <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog page</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <!-- ================> Page header end here <================== -->
+
+
+
+
+
+
+  <!-- ========== Blog Section start Here========== -->
+  <section class="blog padding-top padding-bottom">
+    <div class="container">
+      <div class="blog__wrapper">
+        <div class="row justify-content-center">
+            {% for blog in blogs %}
+          <div class="col-xl-8">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="blog__item blog__item--card">
+                  <div class="blog__item-inner">
+                    <div class="blog__item-thumb">
+                      <img src="{{ blog.image.url }}" alt="blog image">
+                    </div>
+                    <div class="blog__item-content">
+                      <ul class="blog__meta d-flex flex-wrap align-items-center mb-15">
+                        <li class="blog__meta-author">
+                          <a href="#"><span><i class="fa-solid fa-user"></i></span>{{ blog.author }}</a>
+                        </li>
+                        <li class="blog__meta-date">
+                          <a href="#"><span><i class="fa-solid fa-calendar-days"></i></span>
+                            {{ blog.create_at }}</a>
+                        </li>
+                      </ul>
+                      <h3><a href="{% url 'blog_single' %}">{{ blog.title }}</a></h3>
+                      <p>{{ blog.description }}
+                      </p>
+                      <a href="{% url 'blog_single' %}" class="custom-btn"><span>Read More</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="mt-5 text-center">
+              <nav aria-label="Room listing Pagination">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <span class="page-link"><i class="fa-solid fa-angle-left"></i></span>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item active" aria-current="page">
+                    <span class="page-link">2</span>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+            {% endfor %}
+{#          <div class="col-xl-4 col-md-8">#}
+{#            <aside class="ps-xl-4">#}
+{##}
+{#              <div class="widget widget-search">#}
+{#                <div class="widget__header">#}
+{#                  <h4>Search keywords</h4>#}
+{#                </div>#}
+{#                <div class="widget-search-inner">#}
+{#                  <div class="input-group">#}
+{#                    <input type="text" class="form-control" placeholder="Search here" aria-label="Search bar">#}
+{#                    <button class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{##}
+{#              <div class="widget widget-post">#}
+{#                <div class="widget__header">#}
+{#                  <h4>Recent Post</h4>#}
+{#                </div>#}
+{#                <ul class="lab-ul widget-wrapper">#}
+{#                  <li class="widget-post-item">#}
+{#                    <div class="post-thumb">#}
+{#                      <a href="{% url 'blog_single' %}"><img src="{% static 'app/assets/images/blog/p-post/01.jpg' %}" alt="product"></a>#}
+{#                    </div>#}
+{#                    <div class="post-content">#}
+{#                      <a href="{% url 'blog_single' %}">#}
+{#                        <h6>Poor People’s Campaign Our Resources</h6>#}
+{#                      </a>#}
+{#                      <p>01 January 2023</p>#}
+{#                    </div>#}
+{#                  </li>#}
+{#                  <li class="widget-post-item">#}
+{#                    <div class="post-thumb">#}
+{#                      <a href="{% url 'blog_single' %}"><img src="{% static 'app/assets/images/blog/p-post/02.jpg' %}" alt="product"></a>#}
+{#                    </div>#}
+{#                    <div class="post-content">#}
+{#                      <a href="{% url 'blog_single' %}">#}
+{#                        <h6>Boosting Social For NGO And Charities </h6>#}
+{#                      </a>#}
+{#                      <p>01 January 2023</p>#}
+{#                    </div>#}
+{#                  </li>#}
+{#                  <li class="widget-post-item">#}
+{#                    <div class="post-thumb">#}
+{#                      <a href="{% url 'blog_single' %}"><img src="{% static 'app/assets/images/blog/p-post/03.jpg' %}" alt="product"></a>#}
+{#                    </div>#}
+{#                    <div class="post-content">#}
+{#                      <a href="{% url 'blog_single' %}">#}
+{#                        <h6>Poor People’s Campaign Our Resources</h6>#}
+{#                      </a>#}
+{#                      <p>01 January 2023</p>#}
+{#                    </div>#}
+{#                  </li>#}
+{#                  <li class="widget-post-item">#}
+{#                    <div class="post-thumb">#}
+{#                      <a href="{% url 'blog_single' %}"><img src="{% static 'app/assets/images/blog/p-post/04.jpg' %}" alt="product"></a>#}
+{#                    </div>#}
+{#                    <div class="post-content">#}
+{#                      <a href="{% url 'blog_single' %}">#}
+{#                        <h6>Boosting Social For NGO And Charities</h6>#}
+{#                      </a>#}
+{#                      <p>01 January 2023</p>#}
+{#                    </div>#}
+{#                  </li>#}
+{#                </ul>#}
+{#              </div>#}
+{##}
+{#              <div class="widget widget-category">#}
+{#                <div class="widget__header">#}
+{#                  <h5>Post Categories</h5>#}
+{#                </div>#}
+{#                <ul class="lab-ul widget-wrapper list-bg-none">#}
+{#                  <li>#}
+{#                    <a href="#" class="d-flex flex-wrap justify-content-between"><span>#}
+{#                        <i class="icofont-folder-open"></i>Show#}
+{#                        all</span><span>18</span></a>#}
+{#                  </li>#}
+{#                  <li>#}
+{#                    <a href="#" class="d-flex flex-wrap justify-content-between"><span><i#}
+{#                          class="icofont-folder-open"></i>Business</span><span>20</span></a>#}
+{#                  </li>#}
+{#                  <li>#}
+{#                    <a href="#" class="d-flex flex-wrap justify-content-between"><span><i#}
+{#                          class="icofont-folder-open"></i>Creative</span><span>25</span></a>#}
+{#                  </li>#}
+{#                  <li>#}
+{#                    <a href="#" class="d-flex flex-wrap justify-content-between"><span><i#}
+{#                          class="icofont-folder-open"></i>Inspiation</span><span>30</span></a>#}
+{#                  </li>#}
+{#                  <li>#}
+{#                    <a href="#" class="d-flex flex-wrap justify-content-between"><span><i#}
+{#                          class="icofont-folder-open"></i>News</span><span>28</span></a>#}
+{#                  </li>#}
+{#                  <li>#}
+{#                    <a href="#" class="d-flex flex-wrap justify-content-between"><span><i#}
+{#                          class="icofont-folder-open"></i>Photography</span><span>20</span></a>#}
+{#                  </li>#}
+{#                  <li>#}
+{#                    <a href="#" class="d-flex flex-wrap justify-content-between"><span><i#}
+{#                          class="icofont-folder-open"></i>Smart</span><span>26</span></a>#}
+{#                  </li>#}
+{#                </ul>#}
+{#              </div>#}
+{##}
+{##}
+{#              <div class="widget widget-tags">#}
+{#                <div class="widget__header">#}
+{#                  <h4>Our Popular tags</h4>#}
+{#                </div>#}
+{#                <ul class="lab-ul widget-wrapper">#}
+{#                  <li><a href="#">design</a></li>#}
+{#                  <li><a href="#">template</a></li>#}
+{#                  <li><a href="#">Business</a></li>#}
+{#                  <li><a href="#">Tavern</a></li>#}
+{#                  <li><a href="#">consult</a></li>#}
+{#                  <li><a href="#">Research</a></li>#}
+{#                  <li><a href="#">design</a></li>#}
+{#                  <li><a href="#">template</a></li>#}
+{#                  <li><a href="#">strategy</a></li>#}
+{#                </ul>#}
+{#              </div>#}
+{#            </aside>#}
+{#          </div>#}
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ========== Blog Section ends Here========== -->
+
+
+
+
+
+
+
+  <!-- ========== Footer Section start Here========== -->
+{% include 'base/footer.html' %}
+  <!-- ========== Footer Section ends Here========== -->
+
+
+  <!-- scrollToTop start here -->
+  <a href="#" class="scrollToTop"><i class="fa-solid fa-arrow-up"></i></a>
+  <!-- scrollToTop ending here -->
+
+  <!-- vendor plugins -->
+{% endblock content %}
+</body>
+
+
+<!-- Mirrored from labartisan.net/demo/tavern/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Aug 2023 12:34:26 GMT -->
+</html>

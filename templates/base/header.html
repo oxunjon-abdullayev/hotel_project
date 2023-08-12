@@ -1,0 +1,142 @@
+{% load static %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="{% static 'app/assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/aos.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/lightcase.css' %}">
+        <link rel="stylesheet" href="{% static 'app/assets/css/flatpickr.min.css' %}">
+    </head>
+    <body>
+    <header class="header-section header-1">
+
+        <div class="header-holder">
+            <div class="header-menu-part">
+
+                <div class="header-top">
+                    <div class="container">
+                        <div class="header-top-area">
+                            <ul class="left">
+                                <li>
+                                    <i class="fa-solid fa-phone"></i> <span>+800-123-4567 6587</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i> <span>tavernhotel@gmail.com</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i> Beverley, New York 224 USA
+                                </li>
+                            </ul>
+                            <div class="lang-select">
+{#                                <span><i class="fa-solid fa-globe"></i></span>#}
+
+                                <select class="form-select" aria-label="Select Language">
+                                    <option selected> English</option>
+                                    <option value="1"> Spanish</option>
+                                    <option value="2"> French</option>
+                                    <option value="3"> Italian</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container">
+                    <div class="header-bottom d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="brand-logo d-none d-lg-inline-block">
+                            <div class="logo">
+                                <a href="{% url 'index' %}">
+                                    <img src="{% static 'app/assets/images/logo/logo.png' %}" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header-wrapper justify-content-lg-end">
+                            <div class="mobile-logo d-lg-none">
+                                <a href="{% url 'index' %}"><img src="{% static 'app/assets/images/logo/logo.png' %}"
+                                                                 alt="logo"></a>
+                            </div>
+                            <div class="menu-area">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="{% url 'index' %}">Home</a>
+                                    </li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li>
+                                        <a href="{% url 'room_listing' %}">Rooms</a>
+                                        {#                                    <ul class="submenu">#}
+                                        {#                                        <li><a href="{% url 'room_listing' %}">Room Listing 1</a></li>#}
+                                        {#                                    </ul>#}
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">Pages</a>
+                                        <ul class="submenu">
+                                            <li><a href="{% url 'about' %}">About</a></li>
+                                            <li><a href="{% url 'booking' %}">Booking</a></li>
+                                            <li><a href="{% url 'pricing' %}">Pricing</a></li>
+
+                                            <li>
+                                                <a href="{% url 'room_listing' %}">Rooms</a>
+
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'services' %}">Services</a>
+{#
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'team' %}">Staffs</a>
+{#
+                                            </li>
+                                        
+                                            <li><a href="{% url 'account' %}">Account</a></li>
+                                   
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'blog' %}">Blogs</a>
+                       
+                                    </li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                                <div class="search-container">
+                                    <a href="#" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+                                    <div class="search-bar">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search Here"
+                                                   aria-label="Search Input"
+                                                   aria-describedby="basic-addon2">
+                                            <button class="input-group-text" id="basic-addon2">Search</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <a href="{% url 'booking' %}" class="booking-btn"><span>Book
+                    Now</span></a>
+
+                                <!-- toggle icons -->
+                                <div class="header-bar d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="ellepsis-bar d-lg-none">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    </body>
+    </html>
+{% endblock content %}
